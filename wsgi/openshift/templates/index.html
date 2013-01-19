@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>Liquoropoly</title>
+		<link href="static/css/bootstrap.min.css" rel="stylesheet">
+		<link href="static/css/liquoropoly.css" rel="stylesheet">
+		<!--<link href="media/css/bootstrap-responsive.css" rel="stylesheet">-->
+	</head>
+	<body>
+		
+		<div id="liquor_homeSearch" class="hero-unit">
+		<div id="liquor_logo">
+			<div>
+				<a href="/#/">
+					<img src="/static/img/logo4.jpg" />
+				</a>
+			</div>
+			<div id="liquor_searchHolder" class="hero-unit">
+		
+		
+				<div id="mainContentArea">	
+				</div>
+		
+			</div>
+	
+			<div id="liquor_about">
+				<h5>What is this place?</h5>
+				<span>In Alabama, liquor prices are controlled by the state-run ABC board. This site makes it easy to search through the latest price list. Use it to plan your next party, shopping trip, or whatever.</span>
+			</div>
+	
+		</div>
+
+		</div>
+		
+		
+		<script type="text/html" id="template_indexSearchOLD">
+			
+				
+				<div class="form-search" style="">
+					<h4>Find liquor prices by name:</h4>
+			  		<input type="text" style="width:70%; max-width:400px;" placeholder="liquor name (e.g. jack daniel's) or type (e.g. whiskey)">
+			  		<button style="width:30%; max-width:100px;" class="btn btn-primary">Get Prices</button>
+				</div>
+				<div id="liquor_tagSearch">
+					<h4>Or by type:</h4>
+					<a href="#/tags/whiskey" class="btn btn-inverse">whiskey</a>
+					<a href="#/tags/gin" class="btn btn-inverse">gin</a>
+					<a href="#/tags/tequila" class="btn btn-inverse">tequila</a>
+					<a href="#/tags/vodka" class="btn btn-inverse">vodka</a>
+					<a href="#/tags/brandy" class="btn btn-inverse">brandy</a>
+				</div>
+				
+				
+				
+		</script>
+		
+		<script type="text/html" id="template_searchResults">
+			<div id="liquor_searchResults" class="container">
+				
+				<div id="liquor_searchResultsContainer">
+					<h3>Drinks <%= actionName %> "<%= drinkName %>":</h3>
+				</div>
+			</div>
+		</script>
+		
+		<script type="text/html" id="template_searchResult">
+			<div class="liquor_searchResult">
+				<div>
+					<span class="liquor_searchResult_name"><%= name %> - </span>
+					<%= prices %>
+				</div>
+				<div>
+					<span>Tagged: </span>
+					<%= tags %>
+				</div>
+				
+				
+			</div>
+		</script>
+		<script type="text/html" id="template_searchResultPrice">
+			<span class="label label-success">$<%= price %> <%= size %></span>
+		</script>
+		<script type="text/html" id="template_searchResultTag">
+			<a href="#/tags/<%= name %>" class="liquor_searchResult_tagLink"><%= name %></a>
+		</script>
+		
+		
+		<script type="text/html" id="template_searchResultEmpty">
+			<div class="liquor_emptyResults">
+				<h4>Whoops! We couldn't find anything. <a href="/">Search Again</a></h4>
+				
+			</div>
+		</script>
+		
+		
+		<script src="static/js/jquery-1.8.0.min.js"></script>
+		<script src="static/js/underscore-min.js"></script>
+		<script src="static/js/backbone-min.js"></script>
+		<script src="static/js/bootstrap.min.js"></script>
+		<script src="static/js/liquoropoly.js"></script>
+		
+		
+	</body>
+</html>
