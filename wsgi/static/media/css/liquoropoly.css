@@ -50,7 +50,7 @@ body{
 	padding:20px;
 	margin-top:20px;
 	min-width:505px;
-	background: url('/media/img/cardboard_flat.png');
+	background: url('static/media/img/cardboard_flat.png');
 }
 
 #footer{
