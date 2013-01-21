@@ -16,7 +16,7 @@ class Drink(models.Model):
 	name = models.CharField(max_length=200, db_index=True)
 	description = models.TextField(blank=True)
 	tags = models.ManyToManyField(Tag, blank=True)
-	imageID = models.CharField(max_length=10)
+	imageID = models.CharField(max_length=10, blank=True)
 	def __unicode__(self):
 		return self.name
 	def toJSONObject(self):
