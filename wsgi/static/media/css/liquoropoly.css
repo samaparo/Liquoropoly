@@ -28,7 +28,7 @@ body{
 }
 
 .liquor_formSearch{
-	min-width:505px;
+	/*min-width:505px;*/
 }
 
 #liquor_tagSearch{
@@ -49,8 +49,8 @@ body{
 #liquor_logo .hero-unit{
 	padding:20px;
 	margin-top:20px;
-	min-width:505px;
-	background: url('static/media/img/cardboard_flat.png');
+	/*min-width:505px;*/
+	background: url('/static/media/img/cardboard_flat.png');
 }
 
 #footer{
