@@ -14,6 +14,7 @@ class Size(models.Model):
 		
 class Drink(models.Model):
 	name = models.CharField(max_length=200, db_index=True)
+	proof = models.CharField(blank=True, max_length=32)
 	description = models.TextField(blank=True)
 	tags = models.ManyToManyField(Tag, blank=True)
 	imageID = models.CharField(max_length=10, blank=True)
@@ -40,8 +41,10 @@ class Drink(models.Model):
 		
 class Price(models.Model):
 	value = models.FloatField()
+	caseValue = models.FloatField()
 	drink = models.ForeignKey(Drink)
 	size = models.ForeignKey(Size)
+	isWholesale = models.BooleanField()
 	
 	def __unicode__(self):
 		return self.drink.__unicode__() + ' ' + self.size.__unicode__() + '- $' + str(self.value) 

@@ -82,7 +82,11 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, '..', 'static')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+if ON_OPENSHIFT:
+	STATIC_URL = '/static/'
+else: 
+	STATIC_URL = '/static/media/'
+
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -93,7 +97,7 @@ ADMIN_MEDIA_PREFIX = '/static/admin/'
 if ON_OPENSHIFT:
 	STATICFILES_DIRS = ()
 else: 
-	STATICFILES_DIRS = ('/Users/sam/Sites/django/wsgi/static/media'),
+	STATICFILES_DIRS = ('/Users/sam/Sites/django/wsgi/static/media/'),
 
 # List of finder classes that know how to find static files in
 # various locations.
