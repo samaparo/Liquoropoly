@@ -85,7 +85,7 @@ STATIC_ROOT = os.path.join(PROJECT_DIR, '..', 'static')
 if ON_OPENSHIFT:
 	STATIC_URL = '/static/'
 else: 
-	STATIC_URL = '/static/media/'
+	STATIC_URL = '/static/media'
 
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
