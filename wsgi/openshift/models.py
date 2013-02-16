@@ -18,8 +18,10 @@ class Drink(models.Model):
 	description = models.TextField(blank=True)
 	tags = models.ManyToManyField(Tag, blank=True)
 	imageID = models.CharField(max_length=10, blank=True)
+	
 	def __unicode__(self):
 		return self.name
+	
 	def toJSONObject(self):
 		tagList = []
 		for tag in self.tags.all():

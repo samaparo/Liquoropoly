@@ -10,35 +10,32 @@ from itertools import chain
 def index(request):	
 	indexTemplate = loader.get_template('index.html')
 	return HttpResponse(indexTemplate.render(Context()))
-	
+
+#TODO: Change service format to /drinks/query
 def search(request):
-	pageSize = 30
-	pageNumber = 0 
-	if(request.GET.__contains__("page")):
-		requestedPageNumber = request.GET["page"]
-		pageNumber = requestedPageNumber if requestedPageNumber.isnumeric() and requestedPageNumber>0 else 0
 	searchResults = None 
-	searchResultsWithTagName = None
+	
+	#TODO: Break into separate view method with service format /tags/id
 	if(request.GET.__contains__("tag")):
 		tagQuery = request.GET["tag"]
 		try:
-			theTag = Tag.objects.get(name__icontains=tagQuery)
+			theTag = Tag.objects.get(name=tagQuery)
 			searchResults = theTag.drink_set.filter()
-			
 		except Tag.DoesNotExist:
 			pass
-		
+	
 	elif(request.GET.__contains__("q")):
 		queryString = request.GET["q"]
-		#results_drinkTitle = Drink.objects.filter(name__icontains=queryString)[(pageSize*pageNumber):pageSize]
+		
 		results_drinkTitle = Drink.objects.filter(name__icontains=queryString)
-		results_drinkTag = list()
-		try:
-			foundTag = Tag.objects.get(name__icontains=queryString)
-			results_drinkTag = foundTag.drink_set.filter()
-		except Tag.DoesNotExist:
-			pass
-		searchResults = list(chain(results_drinkTitle, results_drinkTag))
+		
+		results_drinkTag = set()
+		matchingTags = Tag.objects.filter(name__icontains=queryString)
+		for currentTag in matchingTags:
+			taggedDrinks = currentTag.drink_set.filter()
+			results_drinkTag = set(chain(results_drinkTag, taggedDrinks))
+
+		searchResults = set(chain(results_drinkTitle, results_drinkTag))
 	serializedDrinks=[]
 	if searchResults != None:
 		for drink in searchResults:
