@@ -14,13 +14,14 @@ app.Collections = app.Collections || {};
 		priceTemplate: _.template($("#template_searchResultPrice").html()),
 		tagTemplate: _.template($("#template_searchResultTag").html()),
 		render: function (currentDrink) {
-			var viewHTML, drinkPrices, priceHTML, drinkTags, tagHTML;
-
+			var viewHTML, drinkPrices, priceHTML, drinkTags, tagHTML, me;
+			
+			me = this;
 			drinkPrices = currentDrink.get("prices");
 			priceHTML = "";
 			if (drinkPrices.length > 0) {
 				_.each(drinkPrices, function (pri) {
-					priceHTML += this.priceTemplate({
+					priceHTML += me.priceTemplate({
 						price: pri.value,
 						size: pri.size
 					});
@@ -32,7 +33,7 @@ app.Collections = app.Collections || {};
 			if (drinkTags.length > 0) {
 				_.each(drinkTags, function (tag) {
 					tagHTML += tagHTML === "" ? "" : ", ";
-					tagHTML += this.tagTemplate({
+					tagHTML += me.tagTemplate({
 						name: tag
 					});
 				});

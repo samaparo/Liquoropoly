@@ -13,7 +13,7 @@ app.Collections = app.Collections || {};
 		template : _.template($("#template_searchResults").html()),
 		el : $("#mainContentArea"),
 		render : function (drinkQuery, isTagQuery) {
-			var queryAction, paramObject, viewHTML, drinkResults, resultHTML, tempView;
+			var queryAction, paramObject, viewHTML, drinkResults, resultHTML, tempView, me;
 			queryAction = "matching";
 			paramObject = {q: drinkQuery};
 			if (isTagQuery !== undefined && isTagQuery === true) {
@@ -21,6 +21,7 @@ app.Collections = app.Collections || {};
 				paramObject = {tag: drinkQuery};
 			}
 			
+			me = this;
 			drinkResults = new app.Collections.DrinkCollection();
 			drinkResults.fetch({
 				data: $.param(paramObject),
@@ -36,8 +37,8 @@ app.Collections = app.Collections || {};
 						resultHTML = tempView.render().html();
 					}
 					
-					viewHTML = this.template({actionName: queryAction, drinkName: drinkQuery, results: resultHTML});
-					this.$el.html(viewHTML);
+					viewHTML = me.template({actionName: queryAction, drinkName: drinkQuery, results: resultHTML});
+					me.$el.html(viewHTML);
 					
 				}
 			});
