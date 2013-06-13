@@ -29,11 +29,11 @@ app.Collections = app.Collections || {};
 						resultHTML = "";
 						tempView = new app.Views.DrinkView();
 						drinkResults.each(function (drink) {
-							resultHTML += tempView.render(drink);
+							resultHTML += tempView.render(drink).html();
 						}, this);
 					} else {
 						tempView = new app.Views.EmptyResultsView();
-						resultHTML = tempView.render();
+						resultHTML = tempView.render().html();
 					}
 					
 					viewHTML = this.template({actionName: queryAction, drinkName: drinkQuery, results: resultHTML});

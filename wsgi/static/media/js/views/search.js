@@ -17,7 +17,7 @@ app.Views = app.Views || {};
 		},
 		render : function () {
 			var html = this.template();
-			$(this.el).html(html);
+			this.$el.html(html);
 		},
 		buttonSearch : function () {
 			this.submitSearch();

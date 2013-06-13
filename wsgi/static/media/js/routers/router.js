@@ -4,7 +4,7 @@ var app = app || {};
 (function () {
 	'use strict';
 	
-	app.AppRouter = Backbone.Router.extend({
+	var MainRouter = Backbone.Router.extend({
 		routes : {
 			"" : "index",
 			"drinks/:name" : "search",
@@ -24,5 +24,8 @@ var app = app || {};
 		}
 
 	});
+	
+	app.AppRouter = new MainRouter();
+	Backbone.history.start();
 	
 }());
