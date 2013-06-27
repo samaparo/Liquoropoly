@@ -2,56 +2,45 @@
 <html lang="en">
 	<head>
 		<title>Liquoropoly</title>
-		<link href="static/media/css/bootstrap.min.css" rel="stylesheet">
-		<link href="static/media/css/liquoropoly.css" rel="stylesheet">
-		<link href="static/media/css/bootstrap-responsive.css" rel="stylesheet">
+		<link href="static/media/css/lib/layout.css" rel="stylesheet">
+		<link href="static/media/css/lib/base.css" rel="stylesheet">
+		<link href="static/media/css/lib/skeleton.css" rel="stylesheet">
 	</head>
 	<body>
-		
-		<div id="liquor_homeSearch" class="hero-unit">
-		<div id="liquor_logo">
-			<div>
-				<a href="/#/">
-					<img src="/static/media/img/logo4.jpg" />
-				</a>
-			</div>
-			<div id="liquor_searchHolder" class="hero-unit">
-		
-		
-				<div id="mainContentArea">	
-				</div>
-		
-			</div>
-	
-			<div id="liquor_about">
-				<h5>What is this place?</h5>
-				<span>In Alabama, liquor prices are controlled by the state-run ABC board. This site makes it easy to search through the latest price list. Use it to plan your next party, shopping trip, or whatever.</span>
-			</div>
-	
-		</div>
 
+		<div class="container">
+			
+			<header class="sixteen columns">
+				<!--<img style="max-width:100%; height:auto; margin:0px auto; display:block;" src="/static/media/img/logo4.jpg" />-->
+				<img src="http://dummyimage.com/940x80/ff0000/fff&text=liquor+logo" style="max-width:100%; height:auto;" />
+			</header>
+		
+			<div id="mainContentArea">	
+			</div>
+			
 		</div>
+			
 		
 		
 		<script type="text/html" id="template_indexSearchOLD">
 			
-				
-				<div class="form-search" style="">
-					<h4>Find liquor prices by name:</h4>
-			  		<input type="text" style="width:70%; max-width:400px;" placeholder="liquor name (e.g. jack daniel's) or type (e.g. whiskey)">
-			  		<button style="width:30%; max-width:100px;" class="btn btn-primary">Get Prices</button>
+				<div class="ten columns offset-by-three">
+					<div style="width:70%; float:left;">
+			  			<input type="text" placeholder="liquor name (like jack daniel's) or type (like whiskey)">
+					</div>
+					<div style="width:30%; float:left;">
+						<button>Get Prices</button>
+					</div>
 				</div>
-				<div id="liquor_tagSearch">
-					<h4>Or by type:</h4>
-					<a href="#/tags/whiskey" class="btn btn-inverse">whiskey</a>
-					<a href="#/tags/gin" class="btn btn-inverse">gin</a>
-					<a href="#/tags/tequila" class="btn btn-inverse">tequila</a>
-					<a href="#/tags/vodka" class="btn btn-inverse">vodka</a>
-					<a href="#/tags/brandy" class="btn btn-inverse">brandy</a>
-				</div>
-				
-				
-				
+			
+			<!--<div id="liquor_tagSearch">
+				<h4>Or by type:</h4>
+				<a href="#/tags/whiskey" class="btn btn-inverse">whiskey</a>
+				<a href="#/tags/gin" class="btn btn-inverse">gin</a>
+				<a href="#/tags/tequila" class="btn btn-inverse">tequila</a>
+				<a href="#/tags/vodka" class="btn btn-inverse">vodka</a>
+				<a href="#/tags/brandy" class="btn btn-inverse">brandy</a>
+			</div>-->
 		</script>
 		
 		<script type="text/html" id="template_searchResults">
@@ -76,22 +65,20 @@
 					<span>Tagged: </span>
 					<%= tags %>
 				</div>
-				
-				
 			</div>
 		</script>
+		
 		<script type="text/html" id="template_searchResultPrice">
 			<span class="label label-success">$<%= price %> <%= size %></span>
 		</script>
+		
 		<script type="text/html" id="template_searchResultTag">
 			<a href="#/tags/<%= name %>" class="liquor_searchResult_tagLink"><%= name %></a>
 		</script>
 		
-		
 		<script type="text/html" id="template_searchResultEmpty">
 			<div class="liquor_emptyResults">
 				<h4>Whoops! We couldn't find anything. <a href="/">Search Again</a></h4>
-				
 			</div>
 		</script>
 		
@@ -99,7 +86,6 @@
 		<script src="static/media/js/lib/jquery-1.8.0.min.js"></script>
 		<script src="static/media/js/lib/underscore-min.js"></script>
 		<script src="static/media/js/lib/backbone-min.js"></script>
-		<script src="static/media/js/lib/bootstrap.min.js"></script>
 		<script src="static/media/js/models/drink.js"></script>
 		<script src="static/media/js/collections/drinks.js"></script>
 		<script src="static/media/js/views/drink.js"></script>
