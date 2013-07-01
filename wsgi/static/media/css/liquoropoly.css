@@ -13,6 +13,19 @@
 	font-size:18px;
 }
 
+#liquor_searchHolder .form-search input {
+	width:70%; 
+	max-width:400px;
+}
+#liquor_searchHolder .form-search span {
+	width:30%;
+	max-width:100px;
+}
+
+#liquor_tagSearch{
+	padding-top:5px;
+}
+
 
 #liquor_contentWrap{
 	padding-top:20px;
@@ -20,10 +33,6 @@
 	margin-right:auto;
 	width:100%;
 	max-width:530px;
-}
-
-#liquor_tagSearch{
-	padding-top:5px;
 }
 
 
@@ -40,6 +49,8 @@
 	/*min-width:505px;*/
 	background: url('/static/media/img/cardboard_flat.png');
 }
+
+
 
 
 

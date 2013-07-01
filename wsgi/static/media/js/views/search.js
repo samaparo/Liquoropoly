@@ -9,11 +9,11 @@ app.Views = app.Views || {};
 	'use strict';
 	
 	app.Views.SearchView = Backbone.View.extend({
-		template :  _.template($("#template_indexSearchOLD").html()),
+		template :  _.template($("#template_indexSearch").html()),
 		el : $("#mainContentArea"),
 		events : {
-			"click #liquor_homeSearch .form-search button" : "buttonSearch",
-			"keypress #liquor_homeSearch .form-search input": "enterSearch"
+			"click #liquor_contentWrap .form-search button" : "buttonSearch",
+			"keypress #liquor_contentWrap .form-search input": "enterSearch"
 		},
 		render : function () {
 			var html = this.template();
@@ -29,7 +29,7 @@ app.Views = app.Views || {};
 		},
 		submitSearch : function () {
 			var $textBox, searchQuery;
-			$textBox = $("#liquor_homeSearch .form-search input");
+			$textBox = $("#liquor_contentWrap .form-search input");
 			searchQuery = $textBox.attr("value");
 			window.location = "/#/drinks/" + searchQuery;
 		}
