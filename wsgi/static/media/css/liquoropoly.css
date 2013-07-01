@@ -1,7 +1,8 @@
-body{
 
+
+#liquor_searchResults{
+	max-width: 505px;
 }
-
 .liquor_searchResult{
 	margin-bottom: 10px;
 	padding-bottom: 10px;
@@ -12,32 +13,19 @@ body{
 	font-size:18px;
 }
 
-#liquor_searchResults{
-	width: 505px;
-}
 
-#liquor_homeSearch{
-	background-color:white;
-	padding:20px;
-}
-
-#liquor_homeSearch #liquor_logo{
+#liquor_contentWrap{
+	padding-top:20px;
 	margin-left:auto;
 	margin-right:auto;
+	width:100%;
 	max-width:530px;
-}
-
-.liquor_formSearch{
-	/*min-width:505px;*/
 }
 
 #liquor_tagSearch{
 	padding-top:5px;
 }
 
-#liquor_about{
-	padding-top:5px;
-}
 
 #liquor_mainSubtitle{
 	color:black;
@@ -46,19 +34,12 @@ body{
 	
 }
 
-#liquor_logo .hero-unit{
+#liquor_contentWrap .hero-unit{
 	padding:20px;
 	margin-top:20px;
 	/*min-width:505px;*/
 	background: url('/static/media/img/cardboard_flat.png');
 }
 
-#footer{
-	background-color:black;
-}
-
-.liquor_searchThumb{
-	margin-top:10px;
-}
 
 
